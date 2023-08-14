@@ -16,11 +16,6 @@ if uploaded_file:
 	records = SeqIO.parse(stringio, "fasta")
 
 	st.header("GC Fraction as Table")
-	# df = pd.DataFrame(columns=['Seq ID','GC Fraction'])
-	# for record in records:
-	# 	df = df.append(pd.DataFrame({'Seq ID': record.id, 'GC Fraction': gc_fraction(record.seq)}, index=[0]), ignore_index=True)
-	# data.set_index('Seq ID', inplace = True)
-	# st.write(df)
 	df = pd.DataFrame(columns=['GC Fraction'])
 	df = df.rename_axis('Seq ID')
 	for record in records:
